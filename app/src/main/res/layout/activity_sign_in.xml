@@ -6,13 +6,55 @@
     android:layout_height="match_parent"
     tools:context=".SignInActivity">
 
-    <TextView
+
+    <ImageView
+        android:id="@+id/mainImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="150dp"
+        tools:srcCompat="@tools:sample/avatars"/>
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/userId"
+        app:layout_constraintTop_toBottomOf="@id/mainImage"
+        app:layout_constraintStart_toStartOf="@id/mainImage"
+        app:layout_constraintEnd_toEndOf="@id/mainImage"
+        android:layout_marginTop="30dp"
+        android:hint="@string/inputId"/>
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/userPw"
+        app:layout_constraintTop_toBottomOf="@id/userId"
+        app:layout_constraintStart_toStartOf="@id/userId"
+        app:layout_constraintEnd_toEndOf="@id/userId"
+        android:layout_marginTop="30dp"
+        android:hint="@string/inputPw"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/signIn"
+        android:id="@+id/signInButton"
+        app:layout_constraintTop_toBottomOf="@id/userPw"
+        app:layout_constraintStart_toStartOf="@id/userPw"
+        app:layout_constraintEnd_toEndOf="@id/userPw"
+        android:layout_marginTop="30dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/signUp"
+        android:id="@+id/signUpButton"
+        app:layout_constraintTop_toBottomOf="@id/signInButton"
+        app:layout_constraintStart_toStartOf="@id/signInButton"
+        app:layout_constraintEnd_toEndOf="@id/signInButton"
+        android:layout_marginTop="20dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
