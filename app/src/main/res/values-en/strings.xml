@@ -54,6 +54,7 @@
     <!--  로그인/회원가입  -->
     <string name="inputId">Please enter your ID</string>
     <string name="inputPw">Please enter your PassWord</string>
+    <string name="inputName">Please enter your Name</string>
     <string name="signUp">Sing up</string>
     <string name="signIn">Sing in</string>
 

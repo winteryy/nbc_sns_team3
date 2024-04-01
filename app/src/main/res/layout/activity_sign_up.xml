@@ -6,4 +6,47 @@
     android:layout_height="match_parent"
     tools:context=".SignUpActivity">
 
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/signUpName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="150dp"
+        android:text="@string/inputName"
+        android:inputType="text"/>
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/signUpID"
+        app:layout_constraintStart_toStartOf="@id/signUpName"
+        app:layout_constraintEnd_toEndOf="@id/signUpName"
+        app:layout_constraintTop_toTopOf="@id/signUpName"
+        android:layout_marginTop="80dp"
+        android:text="@string/inputPw"
+        android:inputType="text"/>
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/signUpPw"
+        app:layout_constraintStart_toStartOf="@id/signUpID"
+        app:layout_constraintEnd_toEndOf="@id/signUpID"
+        app:layout_constraintTop_toTopOf="@id/signUpID"
+        android:layout_marginTop="80dp"
+        android:text="@string/inputPw"
+        android:inputType="text"/>
+
+    <Button
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/signUpButton"
+        app:layout_constraintTop_toBottomOf="@id/signUpPw"
+        app:layout_constraintStart_toStartOf="@id/signUpPw"
+        app:layout_constraintEnd_toEndOf="@id/signUpPw"
+        android:layout_marginTop="80dp"
+        android:text="@string/signUp"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
