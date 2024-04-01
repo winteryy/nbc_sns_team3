@@ -14,7 +14,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="150dp"
-        android:text="@string/inputName"
+        android:hint="@string/inputName"
         android:inputType="text"/>
 
     <EditText
@@ -25,7 +25,7 @@
         app:layout_constraintEnd_toEndOf="@id/signUpName"
         app:layout_constraintTop_toTopOf="@id/signUpName"
         android:layout_marginTop="80dp"
-        android:text="@string/inputPw"
+        android:hint="@string/inputPw"
         android:inputType="text"/>
 
     <EditText
@@ -36,7 +36,7 @@
         app:layout_constraintEnd_toEndOf="@id/signUpID"
         app:layout_constraintTop_toTopOf="@id/signUpID"
         android:layout_marginTop="80dp"
-        android:text="@string/inputPw"
+        android:hint="@string/inputPw"
         android:inputType="text"/>
 
     <Button

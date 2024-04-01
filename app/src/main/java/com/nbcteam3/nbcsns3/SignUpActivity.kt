@@ -28,10 +28,8 @@ class SignUpActivity : AppCompatActivity() {
 
             if (isName || isId || isPw){
                 showToast("입력되지 않은 정보가 있습니다")
+                return@setOnClickListener
             }
-
-            val intent = Intent(this, SignInActivity::class.java)
-            startActivity(intent)
             finish()
         }
     }

@@ -31,7 +31,7 @@ class SignInActivity : AppCompatActivity() {
         signInButton.setOnClickListener {
 
             if(isId){
-                showToast("@string/inputId")
+                showToast("아이디를 입력해주세요")
                 return@setOnClickListener
             }
             if (isPw){
