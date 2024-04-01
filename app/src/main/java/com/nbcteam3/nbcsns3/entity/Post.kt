@@ -4,5 +4,6 @@ data class Post(
     val postId: Int,
     val uid: Int,
     val imageId: Int,
-    val text: String
+    val text: String,
+    val dateTime: Int
 )
