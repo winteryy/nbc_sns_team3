@@ -50,7 +50,7 @@ class SignUpActivity : AppCompatActivity() {
         signUpButton.setOnClickListener {
 
             if (isName || isId || isPw){
-                showToast("입력되지 않은 정보가 있습니다")
+                showToast(getString(R.string.toastnotenter))
             }
             finish()
         }
@@ -58,7 +58,6 @@ class SignUpActivity : AppCompatActivity() {
     private fun showToast(message: String){
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
-//enum class
     private fun ragularPw() {
 
         val pwd = signUpPw.text.toString().trim()
@@ -67,8 +66,7 @@ class SignUpActivity : AppCompatActivity() {
         Log.d("패턴","$pattern")
 
         if(pattern){
-            signUpPwText.isVisible = false //실행
-            //패턴 검증 > 식=if자체가 변수 취급  > 위에 실행 하고 마지막 리턴
+            signUpPwText.isVisible = false
         }else{
             signUpPwText.isVisible = true
             signUpPwText.text = getString(R.string.signUpPwmatch)

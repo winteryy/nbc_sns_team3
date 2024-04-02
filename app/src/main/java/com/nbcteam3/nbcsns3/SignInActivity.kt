@@ -31,11 +31,11 @@ class SignInActivity : AppCompatActivity() {
         signInButton.setOnClickListener {
 
             if(isId){
-                showToast("아이디를 입력해주세요")
+                showToast(getString(R.string.inputId))
                 return@setOnClickListener
             }
-            if (isPw){
-                showToast("비밀번호를 입력해주세요")
+            if(isPw){
+                showToast(getString(R.string.inputPw))
                 return@setOnClickListener
             }
 
