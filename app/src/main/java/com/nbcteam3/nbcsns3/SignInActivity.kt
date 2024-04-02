@@ -16,10 +16,7 @@ class SignInActivity : AppCompatActivity() {
         val signInButton = findViewById<Button>(R.id.signInButton)
         val signUpButton = findViewById<Button>(R.id.signUpButton)
         val userId = findViewById<EditText>(R.id.userId)
-        val inputUserId = userId.text.toString()
         val userPw = findViewById<EditText>(R.id.userPw)
-        val inputUserPw = userPw.text.toString()
-
 
 
         signUpButton.setOnClickListener {
@@ -41,6 +38,8 @@ class SignInActivity : AppCompatActivity() {
             val editor: SharedPreferences.Editor = sharedPreference.edit()
             editor.putString("userId", userId.toString())
             editor.putString("userPw", userPw.toString())
+            editor.apply()
+
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }

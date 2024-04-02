@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
         android:hint="@string/inputId"
-        android:inputType="text"
+        android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="@id/signUpName"
         app:layout_constraintStart_toStartOf="@id/signUpName"
         app:layout_constraintTop_toTopOf="@id/signUpName" />

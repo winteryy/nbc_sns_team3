@@ -47,7 +47,7 @@ class SignUpActivity : AppCompatActivity() {
 //            val isId = inputUserId.isEmpty()
 //            val isPw = inputUserPw.isEmpty()
 
-            if (inputUserName.isEmpty() && inputUserId.isEmpty() && inputUserPw.isEmpty()) {
+            if (inputUserName.isEmpty() || inputUserId.isEmpty() || inputUserPw.isEmpty()) {
                 showToast(getString(R.string.toastnotenter))
                 return@setOnClickListener
             }
@@ -65,7 +65,7 @@ class SignUpActivity : AppCompatActivity() {
 
         val pwd = signUpPw.text.toString().trim()
         val pwdPattern =
-            "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[\$@\$!%*#?&.])[A-Za-z[0-9]\$@\$!%*#?&.]{8,20}\$"
+            "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[\$@\$!%*#?&.])[A-Za-z[0-9]\$@\$!%*#?&.]{5,10}\$"
         val pattern = Pattern.matches(pwdPattern, pwd)
         Log.d("패턴", "$pattern")
 
