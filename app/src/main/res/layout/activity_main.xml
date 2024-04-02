@@ -72,20 +72,20 @@
         app:layout_constraintTop_toBottomOf="@id/divideLine"
         app:layout_constraintBottom_toBottomOf="parent">
 
-        <LinearLayout
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/contentLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical" />
     </ScrollView>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/divideLine"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:listitem="@layout/item_post"/>
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/divideLine"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        tools:listitem="@layout/item_post"/>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
