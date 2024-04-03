@@ -7,6 +7,8 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.nbcteam3.nbcsns3.entity.Post
+import com.nbcteam3.nbcsns3.entity.User
 
 class DetailActivity : AppCompatActivity() {
 
@@ -22,19 +24,31 @@ class DetailActivity : AppCompatActivity() {
         val username = findViewById<TextView>(R.id.setUserName)
         val storyImage = findViewById<ImageView>(R.id.setStory)
         val userstory = findViewById<TextView>(R.id.userStory)
+        val storytitle = findViewById<TextView>(R.id.title)
+        val usermemo = findViewById<TextView>(R.id.memo)
 
+        val user = intent.getSerializableExtra(MainActivity.USER_DATA) as User
+        val post = intent.getSerializableExtra(MainActivity.POST_DATA) as Post
 
-        //user.setImageDrawable(AppCompatResources.getDrawable(this, id))
+        //post image id
+        storyImage.setImageResource(post.imageId)
+        userimage.setImageResource(user.profileImageId)
+        username.setText(user.name)
+        userid.setText(user.userId)
+        userstory.setText(post.content)
+        storytitle.setText(post.title)
+        usermemo.setText(user.memo)
+
 
 
         button.setOnClickListener {
+           val intent = Intent(this, MainActivity::class.java)
 
-           // val intent = Intent(this, MyPageActivity::class.Java)
-
-          //  startActivity(intent)
+           startActivity(intent)
 
 
         }
+
 
 
 
