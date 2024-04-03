@@ -36,7 +36,7 @@ class MainActivity: AppCompatActivity() {
 
     private fun setListener() {
         findViewById<Flow>(R.id.myPageFlow).setOnClickListener {
-//            startActivity(Intent(this, MyPageActivity::class.java))
+            startActivity(Intent(this, MyPageActivity::class.java))
         }
     }
 

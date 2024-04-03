@@ -5,7 +5,42 @@
     <string name="confirm">확인</string>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!--  디테일  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     <!--  로그인/회원가입  -->
@@ -18,7 +53,34 @@
     <string name="toastnotenter">옳지 않은 정보가 있습니다</string>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!--  마이페이지  -->
+    <string name="edit">설정</string>
+    <string name="id">ID:</string>
+    <string name="NAME">NAME:</string>
 
 
 </resources>

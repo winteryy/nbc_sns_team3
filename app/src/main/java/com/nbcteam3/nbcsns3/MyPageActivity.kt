@@ -3,6 +3,7 @@ package com.nbcteam3.nbcsns3
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
@@ -21,18 +22,16 @@ class MyPageActivity : AppCompatActivity() {
     private val loadUsers = DummyServer.loadUsers()
 
 
-
-
-    @SuppressLint("MissingInflatedId")
+//    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+//        enableEdgeToEdge()
         setContentView(R.layout.activity_my_page)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+//            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+//            insets
+//        }
         val memo = findViewById<TextView>(R.id.memo)
         val name = findViewById<TextView>(R.id.name)
         val proFile = findViewById<ImageView>(R.id.profile)
@@ -47,37 +46,50 @@ class MyPageActivity : AppCompatActivity() {
         }
 
 
-        val inflater : LayoutInflater = LayoutInflater.from(this)
-        val view = inflater.inflate(R.layout.item_mypage,null)
+        val inflater: LayoutInflater = LayoutInflater.from(this)
+
         val layout = findViewById<LinearLayout>(R.id.Post)
 
         val shared = getSharedPreferences("signInUser", MODE_PRIVATE)
         val userId = shared.getString("userId", "") ?: ""
         shared.getString("userPw", "")
-
+        Log.d("MyPageActivity", "userId $userId")
         if (userId.isNotEmpty()) {
 
-            inputID1.text = userId
-
             val findUser = loadUsers.find { it.userId == userId }
-            memo.text = findUser?.memo
-            name.text = findUser?.name
-            if (findUser != null) {
-                proFile.setImageDrawable(AppCompatResources.getDrawable(this,findUser.profileImageId))
-            }
-
 
             if (findUser != null) {
+
+                inputID1.text = findUser.userId
+                memo.text = findUser.memo
+                name.text = findUser.name
+
+                proFile.setImageDrawable(
+                    AppCompatResources.getDrawable(
+                        this,
+                        findUser.profileImageId
+                    )
+                )
 
                 val findPost = loadPosts.filter { it.uid == findUser.uid }
-                findPost.forEach{foundPost ->
-                    view.findViewById<TextView>(R.id.inputID_2).text = findUser.userId
-                    view.findViewById<TextView>(R.id.input).text = foundPost.content
-                    view.findViewById<ImageView>(R.id.profile2).setImageDrawable(AppCompatResources.getDrawable(this,foundPost.imageId))
-                    view.findViewById<ImageView>(R.id.imageView2).setImageDrawable(AppCompatResources.getDrawable(this,foundPost.imageId))
+                Log.d("MyPage",findPost.toString())
+                findPost.forEach { foundPost ->
+
+                    val view = inflater.inflate(R.layout.item_mypage, null)
+
+                    view.findViewById<TextView>(R.id.inputId_2).text = foundPost.title
+                    view.findViewById<TextView>(R.id.memo).text = foundPost.content
+                    view.findViewById<ImageView>(R.id.imageView2)
+                        .setImageDrawable(AppCompatResources.getDrawable(this, foundPost.imageId))
+
+                    layout.addView(view)
+
                 }
-                layout.addView(view)
+
+
             }
+
         }
+
     }
 }
