@@ -1,5 +1,7 @@
 package com.nbcteam3.nbcsns3.entity
 
+import java.io.Serializable
+
 data class User(
     val uid: String,
     val userId: String,
@@ -7,4 +9,4 @@ data class User(
     val name: String,
     val memo: String,
     val profileImageId: Int
-)
+): Serializable
