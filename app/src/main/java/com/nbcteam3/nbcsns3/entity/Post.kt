@@ -1,9 +1,12 @@
 package com.nbcteam3.nbcsns3.entity
 
+import java.io.Serializable
+
 data class Post(
-    val postId: Int,
-    val uid: Int,
+    val postId: String,
+    val uid: String,
     val imageId: Int,
-    val text: String,
-    val dateTime: Int
-)
+    val title: String,
+    val content: String,
+    val dateTime: Long
+): Serializable
