@@ -66,7 +66,7 @@ class SignUpActivity : AppCompatActivity() {
         val pwdPattern =
             "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[\$@\$!%*#?&.])[A-Za-z[0-9]\$@\$!%*#?&.]{5,10}\$"
         val pattern = Pattern.matches(pwdPattern, pwd)
-
+        String
         if (pattern) {
             signUpPwText.isVisible = false
             return true//검사 결과 일때
