@@ -11,50 +11,51 @@
         android:id="@+id/mainImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="150dp"
-        tools:srcCompat="@tools:sample/avatars"/>
+        tools:srcCompat="@tools:sample/avatars" />
 
     <EditText
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
         android:id="@+id/userId"
-        app:layout_constraintTop_toBottomOf="@id/mainImage"
-        app:layout_constraintStart_toStartOf="@id/mainImage"
-        app:layout_constraintEnd_toEndOf="@id/mainImage"
-        android:layout_marginTop="30dp"
-        android:hint="@string/inputId"/>
-
-    <EditText
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:id="@+id/userPw"
-        app:layout_constraintTop_toBottomOf="@id/userId"
-        app:layout_constraintStart_toStartOf="@id/userId"
-        app:layout_constraintEnd_toEndOf="@id/userId"
         android:layout_marginTop="30dp"
-        android:hint="@string/inputPw"/>
+        android:hint="@string/inputId"
+        app:layout_constraintEnd_toEndOf="@id/mainImage"
+        app:layout_constraintStart_toStartOf="@id/mainImage"
+        app:layout_constraintTop_toBottomOf="@id/mainImage" />
+
+    <EditText
+        android:id="@+id/userPw"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:hint="@string/inputPw"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@id/userId"
+        app:layout_constraintStart_toStartOf="@id/userId"
+        app:layout_constraintTop_toBottomOf="@id/userId" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/signIn"
         android:id="@+id/signInButton"
-        app:layout_constraintTop_toBottomOf="@id/userPw"
-        app:layout_constraintStart_toStartOf="@id/userPw"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/signIn"
         app:layout_constraintEnd_toEndOf="@id/userPw"
-        android:layout_marginTop="30dp"/>
+        app:layout_constraintStart_toStartOf="@id/userPw"
+        app:layout_constraintTop_toBottomOf="@id/userPw" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/signUp"
         android:id="@+id/signUpButton"
-        app:layout_constraintTop_toBottomOf="@id/signInButton"
-        app:layout_constraintStart_toStartOf="@id/signInButton"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/signUp"
         app:layout_constraintEnd_toEndOf="@id/signInButton"
-        android:layout_marginTop="20dp"/>
+        app:layout_constraintStart_toStartOf="@id/signInButton"
+        app:layout_constraintTop_toBottomOf="@id/signInButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,4 +6,58 @@
     android:layout_height="match_parent"
     tools:context=".SignUpActivity">
 
+    <EditText
+        android:id="@+id/signUpName"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:hint="@string/inputName"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/signUpID"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:hint="@string/inputId"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="@id/signUpName"
+        app:layout_constraintStart_toStartOf="@id/signUpName"
+        app:layout_constraintTop_toTopOf="@id/signUpName" />
+
+    <EditText
+        android:id="@+id/signUpPw"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:hint="@string/inputPw"
+        android:inputType="textPassword"
+        android:maxLength="10"
+        app:layout_constraintEnd_toEndOf="@id/signUpID"
+        app:layout_constraintStart_toStartOf="@id/signUpID"
+        app:layout_constraintTop_toTopOf="@id/signUpID" />
+
+    <TextView
+        android:id="@+id/signUpPwText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@id/signUpPw"
+        app:layout_constraintStart_toStartOf="@id/signUpPw"
+        app:layout_constraintTop_toBottomOf="@id/signUpPw"
+        tools:text="예비입니다" />
+
+    <Button
+        android:id="@+id/signUpButton"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="@string/signUp"
+        app:layout_constraintEnd_toEndOf="@id/signUpPw"
+        app:layout_constraintStart_toStartOf="@id/signUpPw"
+        app:layout_constraintTop_toBottomOf="@id/signUpPw" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
