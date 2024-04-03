@@ -34,7 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
         android:hint="@string/inputPw"
-        tools:inputType="text"
+        android:inputType="textPassword"
         android:maxLength="10"
         app:layout_constraintEnd_toEndOf="@id/signUpID"
         app:layout_constraintStart_toStartOf="@id/signUpID"
