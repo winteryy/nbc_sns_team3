@@ -26,7 +26,9 @@ class SignUpActivity : AppCompatActivity() {
         val inputUserName = signUpName.text.toString()
         val signUpId = findViewById<EditText>(R.id.signUpID)
         val inputUserId = signUpId.text.toString()
+        signUpPw = findViewById(R.id.signUpPw)
         val inputUserPw = signUpPw.text.toString()
+        signUpPwText = findViewById(R.id.signUpPwText)
 
 
         signUpPw.addTextChangedListener(object : TextWatcher {
@@ -43,14 +45,15 @@ class SignUpActivity : AppCompatActivity() {
 
         signUpButton.setOnClickListener {
 
-//            val isName = inputUserName.isEmpty()
-//            val isId = inputUserId.isEmpty()
-//            val isPw = inputUserPw.isEmpty()
-
             if (inputUserName.isEmpty() || inputUserId.isEmpty() || inputUserPw.isEmpty()) {
                 showToast(getString(R.string.toastnotenter))
                 return@setOnClickListener
             }
+            if (ragularPw()){
+                showToast(getString(R.string.signUpPwmatch))
+                return@setOnClickListener
+            }
+
             val intent = Intent(this, SignInActivity::class.java)
             startActivity(intent)
             finish()
@@ -61,19 +64,23 @@ class SignUpActivity : AppCompatActivity() {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
-    private fun ragularPw() {
+    private fun ragularPw():Boolean {
 
         val pwd = signUpPw.text.toString().trim()
         val pwdPattern =
             "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[\$@\$!%*#?&.])[A-Za-z[0-9]\$@\$!%*#?&.]{5,10}\$"
         val pattern = Pattern.matches(pwdPattern, pwd)
-        Log.d("패턴", "$pattern")
 
         if (pattern) {
             signUpPwText.isVisible = false
+            return false
         } else {
             signUpPwText.isVisible = true
             signUpPwText.text = getString(R.string.signUpPwmatch)
+            return true
         }
     }
 }
+
+
+

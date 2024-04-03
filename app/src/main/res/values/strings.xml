@@ -58,7 +58,7 @@
     <string name="signUp">회원가입</string>
     <string name="signIn">로그인</string>
     <string name="signUpPwmatch">사용할 수 없는 비밀번호 입니다</string>
-    <string name="toastnotenter">입력되지 않은 정보가 있습니다</string>
+    <string name="toastnotenter">옳지 않은 정보가 있습니다</string>
 
 
 

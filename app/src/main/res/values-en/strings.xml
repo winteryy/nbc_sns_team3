@@ -56,7 +56,7 @@
     <string name="inputPw">Please enter your PassWord</string>
     <string name="inputName">Please enter your Name</string>
     <string name="signUpPwmatch">This password cannot be used</string>
-    <string name="toastnotenter">There is information that has not been entered</string>
+    <string name="toastnotenter">There is incorrect information</string>
     <string name="signUp">Sing up</string>
     <string name="signIn">Sing in</string>
 
