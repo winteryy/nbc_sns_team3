@@ -6,7 +6,7 @@
 
 
     <!--  디테일  -->
-
+    <string name="setNameButtonText">"메인페이지"</string>
 
     <!--  로그인/회원가입  -->
     <string name="inputId">아이디를 입력해주세요</string>
