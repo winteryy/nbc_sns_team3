@@ -23,13 +23,9 @@ class SignUpActivity : AppCompatActivity() {
 
         val signUpButton = findViewById<Button>(R.id.signUpButton)
         val signUpName = findViewById<EditText>(R.id.signUpName)
-        val inputUserName = signUpName.text.toString()
         val signUpId = findViewById<EditText>(R.id.signUpID)
-        val inputUserId = signUpId.text.toString()
         signUpPw = findViewById(R.id.signUpPw)
-        val inputUserPw = signUpPw.text.toString()
         signUpPwText = findViewById(R.id.signUpPwText)
-
 
         signUpPw.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
@@ -39,17 +35,17 @@ class SignUpActivity : AppCompatActivity() {
             }
 
             override fun afterTextChanged(s: Editable?) {
-                ragularPw()
+                regularPw()
             }
         })
 
         signUpButton.setOnClickListener {
 
-            if (inputUserName.isEmpty() || inputUserId.isEmpty() || inputUserPw.isEmpty()) {
+            if (signUpName.text.toString().isEmpty() || signUpId.text.toString().isEmpty() || signUpPw.text.toString().isEmpty()) {
                 showToast(getString(R.string.toastnotenter))
                 return@setOnClickListener
             }
-            if (ragularPw()){
+            if (!regularPw()){
                 showToast(getString(R.string.signUpPwmatch))
                 return@setOnClickListener
             }
@@ -64,7 +60,7 @@ class SignUpActivity : AppCompatActivity() {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
-    private fun ragularPw():Boolean {
+    private fun regularPw():Boolean {
 
         val pwd = signUpPw.text.toString().trim()
         val pwdPattern =
@@ -73,11 +69,11 @@ class SignUpActivity : AppCompatActivity() {
 
         if (pattern) {
             signUpPwText.isVisible = false
-            return false
+            return true//검사 결과 일때
         } else {
             signUpPwText.isVisible = true
             signUpPwText.text = getString(R.string.signUpPwmatch)
-            return true
+            return false
         }
     }
 }
