@@ -25,11 +25,11 @@ class SignInActivity : AppCompatActivity() {
         signInButton.setOnClickListener {
 
             if (userId.text.isEmpty()) {
-                showToast(getString(R.string.inputId))
+                showToast(getString(R.string.input_id))
                 return@setOnClickListener
             }
             if (userPw.text.isEmpty()) {
-                showToast(getString(R.string.inputPw))
+                showToast(getString(R.string.input_pw))
                 return@setOnClickListener
             }
 
