@@ -19,6 +19,8 @@ class MainActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
+
         val innerLayout = findViewById<LinearLayoutCompat>(R.id.contentLayout)
         val posts = DummyServer.loadPosts()
         val users = DummyServer.loadUsers()
