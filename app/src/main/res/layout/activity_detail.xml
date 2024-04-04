@@ -153,9 +153,22 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:layout_marginEnd="45dp"
+        android:ellipsize="end"
+        android:maxLines="2"
         android:text="메모"
+        app:layout_constraintEnd_toEndOf="@id/viewTop"
         app:layout_constraintStart_toStartOf="@id/setUserName"
         app:layout_constraintTop_toBottomOf="@id/setUserName" />
+
+    <TextView
+        android:id="@+id/showMore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="더 보기"
+        android:visibility="gone"
+        app:layout_constraintStart_toEndOf="@id/memo"
+        app:layout_constraintTop_toTopOf="@id/memo" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

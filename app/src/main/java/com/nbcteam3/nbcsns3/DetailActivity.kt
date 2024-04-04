@@ -29,9 +29,15 @@ class DetailActivity : AppCompatActivity() {
         val userstory = findViewById<TextView>(R.id.userStory)
         val storytitle = findViewById<TextView>(R.id.title)
         val usermemo = findViewById<TextView>(R.id.memo)
+        val moreMemo = findViewById<TextView>(R.id.showMore)
+
 
         val user = intent.getSerializableExtra(MainActivity.USER_DATA) as User
         val post = intent.getSerializableExtra(MainActivity.POST_DATA) as Post
+
+
+        
+
 
         //post image id
         storyImage.setImageResource(post.imageId)
