@@ -7,7 +7,6 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.content.res.AppCompatResources
 import androidx.appcompat.widget.LinearLayoutCompat
 import androidx.constraintlayout.helper.widget.Flow
 import com.nbcteam3.nbcsns3.entity.Post
@@ -15,11 +14,13 @@ import com.nbcteam3.nbcsns3.entity.User
 import de.hdodenhof.circleimageview.CircleImageView
 
 class MainActivity: AppCompatActivity() {
+    private lateinit var innerLayout: LinearLayoutCompat
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val innerLayout = findViewById<LinearLayoutCompat>(R.id.contentLayout)
+        innerLayout = findViewById(R.id.contentLayout)
         val posts = DummyServer.loadPosts()
         val users = DummyServer.loadUsers()
         val uidMap = users.associateBy { it.uid }
@@ -45,8 +46,8 @@ class MainActivity: AppCompatActivity() {
             R.layout.item_post, null
         )
         itemCard.findViewById<TextView>(R.id.nameTextView).text = writer.userId
-        itemCard.findViewById<CircleImageView>(R.id.profileImageView).setImageFromID(writer.profileImageId)
-        itemCard.findViewById<ImageView>(R.id.contentImageView).setImageFromID(post.imageId)
+        itemCard.findViewById<CircleImageView>(R.id.profileImageView).setImageResource(writer.profileImageId)
+        itemCard.findViewById<ImageView>(R.id.contentImageView).setImageResource(post.imageId)
         itemCard.findViewById<TextView>(R.id.titleTextView).text = post.title
 
         itemCard.setOnClickListener {
@@ -57,10 +58,6 @@ class MainActivity: AppCompatActivity() {
             )
         }
         return itemCard
-    }
-
-    private fun ImageView.setImageFromID(imageId: Int) {
-        this.setImageDrawable(AppCompatResources.getDrawable(this@MainActivity, imageId))
     }
 
     companion object {

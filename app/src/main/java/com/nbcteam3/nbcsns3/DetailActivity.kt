@@ -36,7 +36,7 @@ class DetailActivity : AppCompatActivity() {
         val post = intent.getSerializableExtra(MainActivity.POST_DATA) as Post
 
 
-        
+
 
 
         //post image id
