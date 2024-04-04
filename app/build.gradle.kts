@@ -37,7 +37,7 @@ android {
 
 dependencies {
 
-    //CircleImageView
+
     implementation("de.hdodenhof:circleimageview:3.1.0")
 
     implementation("androidx.core:core-ktx:1.12.0")

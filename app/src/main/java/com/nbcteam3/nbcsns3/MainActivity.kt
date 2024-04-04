@@ -44,6 +44,7 @@ class MainActivity: AppCompatActivity() {
         val itemCard = LayoutInflater.from(this).inflate(
             R.layout.item_post, null
         )
+
         itemCard.findViewById<TextView>(R.id.nameTextView).text = writer.userId
         itemCard.findViewById<CircleImageView>(R.id.profileImageView).setImageFromID(writer.profileImageId)
         itemCard.findViewById<ImageView>(R.id.contentImageView).setImageFromID(post.imageId)
