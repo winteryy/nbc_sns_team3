@@ -59,7 +59,7 @@
         android:id="@+id/myPageTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="MY"
+        android:text="@string/my"
         android:textStyle="bold"
         tools:ignore="MissingConstraints" />
 
