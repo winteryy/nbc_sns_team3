@@ -9,16 +9,19 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.nbcteam3.nbcsns3.entity.Post
 import com.nbcteam3.nbcsns3.entity.User
+import de.hdodenhof.circleimageview.CircleImageView
 
 class DetailActivity : AppCompatActivity() {
 
-    @SuppressLint("MissingInflatedId")
+    //이 이노테이션은 스튜디오에서 발생하는 Lint 경고를 무시하도록 지시하는 역할.
+    //레이아웃 xml 파일에서 뷰에대한 android:id 속성이 없을때 발생하는 경고를 무시하는 명령이다.
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
 
 
-        val button = findViewById<Button>(R.id.setMainButton)
+        val backButton = findViewById<ImageView>(R.id.setMainButton)
         val userimage = findViewById<ImageView>(R.id.setUserimage)
         val userid = findViewById<TextView>(R.id.setUserId)
         val username = findViewById<TextView>(R.id.setUserName)
@@ -41,15 +44,11 @@ class DetailActivity : AppCompatActivity() {
 
 
 
-        button.setOnClickListener {
-           val intent = Intent(this, MainActivity::class.java)
+        backButton.setOnClickListener {
 
-           startActivity(intent)
-
+            finish()
 
         }
-
-
 
 
     }
