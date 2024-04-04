@@ -13,6 +13,9 @@
         android:theme="@style/Theme.NBCSNS3조"
         tools:targetApi="31">
         <activity
+            android:name=".MyPageActivity"
+            android:exported="false" />
+        <activity
             android:name=".SignUpActivity"
             android:exported="false" />
         <activity
@@ -27,14 +30,9 @@
         <activity
             android:name=".DetailActivity"
             android:exported="false" />
-
         <activity
             android:name=".MainActivity"
             android:exported="false" />
-
-
-
-
     </application>
 
 </manifest>

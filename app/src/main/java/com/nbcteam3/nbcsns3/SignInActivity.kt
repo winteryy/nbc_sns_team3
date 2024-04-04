@@ -18,7 +18,6 @@ class SignInActivity : AppCompatActivity() {
         val userId = findViewById<EditText>(R.id.userId)
         val userPw = findViewById<EditText>(R.id.userPw)
 
-
         signUpButton.setOnClickListener {
             val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)

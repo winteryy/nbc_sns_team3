@@ -59,26 +59,8 @@
     <string name="toastnotenter">There is incorrect information</string>
     <string name="signUp">Sign up</string>
     <string name="signIn">Sign in</string>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <string name="id">ID:</string>
+    <string name="NAME">NAME:</string>
 
 
     <!--  마이페이지  -->

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">NBC SNS 3조</string>
+    <string name="app_name">F와 T 그 사이</string>
 
     <!-- 메인 -->
     <string name="confirm">확인</string>
@@ -23,16 +23,8 @@
 
 
 
-
-
-
     <!--  디테일  -->
     <string name="setNameButtonText">"메인페이지"</string>
-
-
-
-
-
 
 
 
@@ -81,32 +73,12 @@
 
 
 
+
+
+
+
     <!--  마이페이지  -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <string name="id">ID:</string>
+    <string name="NAME">NAME:</string>
 
 </resources>
