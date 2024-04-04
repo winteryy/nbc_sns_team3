@@ -21,39 +21,29 @@ class MyPageActivity : AppCompatActivity() {
     private val loadPosts = DummyServer.loadPosts()
     private val loadUsers = DummyServer.loadUsers()
 
-
-//    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        enableEdgeToEdge()
         setContentView(R.layout.activity_my_page)
-//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-//            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-//            insets
-//        }
+
         val memo = findViewById<TextView>(R.id.memo)
         val name = findViewById<TextView>(R.id.name)
         val proFile = findViewById<ImageView>(R.id.profile)
         val btnBack = findViewById<ImageButton>(R.id.btn_back)
-        val edit = findViewById<Button>(R.id.edit)
         val inputID1 = findViewById<TextView>(R.id.inputId)
-
 
         btnBack.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
-
         val inflater: LayoutInflater = LayoutInflater.from(this)
-
         val layout = findViewById<LinearLayout>(R.id.Post)
 
         val shared = getSharedPreferences("signInUser", MODE_PRIVATE)
         val userId = shared.getString("userId", "") ?: ""
         shared.getString("userPw", "")
-        Log.d("MyPageActivity", "userId $userId")
+
         if (userId.isNotEmpty()) {
 
             val findUser = loadUsers.find { it.userId == userId }
@@ -63,13 +53,7 @@ class MyPageActivity : AppCompatActivity() {
                 inputID1.text = findUser.userId
                 memo.text = findUser.memo
                 name.text = findUser.name
-
-                proFile.setImageDrawable(
-                    AppCompatResources.getDrawable(
-                        this,
-                        findUser.profileImageId
-                    )
-                )
+                proFile.setImageResource(findUser.profileImageId)
 
                 val findPost = loadPosts.filter { it.uid == findUser.uid }
                 Log.d("MyPage",findPost.toString())
