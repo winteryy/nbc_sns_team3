@@ -27,7 +27,7 @@
 
 
     <!--  디테일  -->
-    <string name="setNameButtonText">"mainpage"</string>
+    <string name="set_name_button_text">"mainpage"</string>
 
 
 
@@ -52,15 +52,16 @@
 
 
     <!--  로그인/회원가입  -->
-    <string name="inputId">Please enter your ID</string>
-    <string name="inputPw">Please enter your PassWord</string>
-    <string name="inputName">Please enter your Name</string>
-    <string name="signUpPwmatch">This password cannot be used</string>
+    <string name="input_id">Please enter your ID</string>
+    <string name="input_pw">Please enter your PassWord</string>
+    <string name="input_name">Please enter your Name</string>
+    <string name="sign_up_pwmatch">This password cannot be used</string>
     <string name="toastnotenter">There is incorrect information</string>
-    <string name="signUp">Sign up</string>
-    <string name="signIn">Sign in</string>
+    <string name="sign_up">Sign up</string>
+    <string name="sign_in">Sign in</string>
     <string name="id">ID:</string>
-    <string name="NAME">NAME:</string>
+    <string name="name">NAME:</string>
+    <string name="my">MY</string>
 
 
     <!--  마이페이지  -->

@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -46,7 +45,7 @@ class SignUpActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
             if (!regularPw()){
-                showToast(getString(R.string.signUpPwmatch))
+                showToast(getString(R.string.sign_up_pwmatch))
                 return@setOnClickListener
             }
 
@@ -72,7 +71,7 @@ class SignUpActivity : AppCompatActivity() {
             return true//검사 결과 일때
         } else {
             signUpPwText.isVisible = true
-            signUpPwText.text = getString(R.string.signUpPwmatch)
+            signUpPwText.text = getString(R.string.sign_up_pwmatch)
             return false
         }
     }

@@ -25,18 +25,18 @@ class SignInActivity : AppCompatActivity() {
         signInButton.setOnClickListener {
 
             if (userId.text.isEmpty()) {
-                showToast(getString(R.string.inputId))
+                showToast(getString(R.string.input_id))
                 return@setOnClickListener
             }
             if (userPw.text.isEmpty()) {
-                showToast(getString(R.string.inputPw))
+                showToast(getString(R.string.input_pw))
                 return@setOnClickListener
             }
 
             val sharedPreference = getSharedPreferences("signInUser", MODE_PRIVATE)
             val editor: SharedPreferences.Editor = sharedPreference.edit()
-            editor.putString("userId", userId.toString())
-            editor.putString("userPw", userPw.toString())
+            editor.putString("userId", userId.text.toString())
+            editor.putString("userPw", userPw.text.toString())
             editor.apply()
 
             val intent = Intent(this, MainActivity::class.java)
