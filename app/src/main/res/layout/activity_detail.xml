@@ -6,7 +6,8 @@
     xmlns:tools="http://schemas.android.com/tools"
 
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:ignore="ExtraText">
 
 
     <View
@@ -17,7 +18,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/viewon"
@@ -29,56 +30,65 @@
         android:layout_marginBottom="20dp"
         android:background="@color/white"
         app:cardCornerRadius="16dp"
+        app:cardElevation="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/memo"
-        app:cardElevation="15dp" >
+        app:layout_constraintTop_toBottomOf="@id/memo">
 
-
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/title"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginHorizontal="25dp"
-                android:text="타이틀"
-                android:textSize="28sp"
-                app:layout_constraintBottom_toTopOf="@id/setStory"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/setStory"
-                android:layout_width="365dp"
-                android:layout_height="223dp"
-                android:layout_marginTop="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/title"
-                tools:src="@drawable/iust" />
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/setStory">
 
 
-            <TextView
-                android:id="@+id/userStory"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="40dp"
-                android:text="뭐가들어올지 몰라도 뭐가 들어오긴 할것임"
-                android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="@id/setStory"
-                app:layout_constraintEnd_toEndOf="@id/setStory"
-                app:layout_constraintTop_toBottomOf="@id/setStory"/>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="25dp"
+                    android:layout_marginTop="20dp"
+                    android:text="타이틀"
+                    android:textSize="28sp"
+                    app:layout_constraintBottom_toTopOf="@id/setStory"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/setStory"
+                    android:layout_width="365dp"
+                    android:layout_height="223dp"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/title"
+                    tools:src="@drawable/iust" />
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:id="@+id/userStory"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="40dp"
+                    android:text="뭐가들어올지 몰라도 뭐가 들어오긴 할것임"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="@id/setStory"
+                    app:layout_constraintStart_toStartOf="@id/setStory"
+                    app:layout_constraintTop_toBottomOf="@id/setStory" />
 
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
 
     </androidx.cardview.widget.CardView>
 
@@ -110,13 +120,11 @@
         android:layout_height="97dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="15dp"
+        app:civ_border_color="@color/purple_100"
+        app:civ_border_width="4dp"
         app:layout_constraintStart_toStartOf="@id/viewTop"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
-        tools:src="@drawable/iupp"
-        app:civ_border_width="4dp"
-        app:civ_border_color="@color/purple_100"/>
-
-
+        tools:src="@drawable/iupp" />
 
 
     <TextView
@@ -147,13 +155,7 @@
         android:layout_marginTop="10dp"
         android:text="메모"
         app:layout_constraintStart_toStartOf="@id/setUserName"
-        app:layout_constraintTop_toBottomOf="@id/setUserName"
-        />
-
-
-
-
-
+        app:layout_constraintTop_toBottomOf="@id/setUserName" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
