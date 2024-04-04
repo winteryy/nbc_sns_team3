@@ -37,16 +37,18 @@ class MyPageActivity : AppCompatActivity() {
             finish()
         }
 
-        val inflater: LayoutInflater = LayoutInflater.from(this)
+
         val layout = findViewById<LinearLayout>(R.id.Post)
 
         val shared = getSharedPreferences("signInUser", MODE_PRIVATE)
         val userId = shared.getString("userId", "") ?: ""
-        shared.getString("userPw", "")
+        val userPw = shared.getString("userPw", "") ?: ""
 
         if (userId.isNotEmpty()) {
 
             val findUser = loadUsers.find { it.userId == userId }
+
+
 
             if (findUser != null) {
 
@@ -55,22 +57,29 @@ class MyPageActivity : AppCompatActivity() {
                 name.text = findUser.name
                 proFile.setImageResource(findUser.profileImageId)
 
-                val findPost = loadPosts.filter { it.uid == findUser.uid }
-                Log.d("MyPage",findPost.toString())
-                findPost.forEach { foundPost ->
+                val findPw = loadUsers.find { it.password == userPw }
 
-                    val view = inflater.inflate(R.layout.item_mypage, null)
+                if (findPw != null) {
 
-                    view.findViewById<TextView>(R.id.inputId_2).text = foundPost.title
-                    view.findViewById<TextView>(R.id.memo).text = foundPost.content
-                    view.findViewById<ImageView>(R.id.imageView2)
-                        .setImageDrawable(AppCompatResources.getDrawable(this, foundPost.imageId))
+                    val findPost = loadPosts.filter { it.uid == findUser.uid }
+                    Log.d("MyPage", findPost.toString())
+                    findPost.forEach { foundPost ->
+                        val view = LayoutInflater.from(this).inflate(R.layout.item_mypage,null)
 
-                    layout.addView(view)
+                        view.findViewById<TextView>(R.id.inputId_2).text = foundPost.title
+                        view.findViewById<TextView>(R.id.memo).text = foundPost.content
+                        view.findViewById<ImageView>(R.id.imageView2)
+                            .setImageDrawable(
+                                AppCompatResources.getDrawable(
+                                    this,
+                                    foundPost.imageId
+                                )
+                            )
 
+                        layout.addView(view)
+
+                    }
                 }
-
-
             }
 
         }

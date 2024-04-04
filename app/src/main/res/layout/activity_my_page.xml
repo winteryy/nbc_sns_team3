@@ -15,7 +15,6 @@
         android:layout_marginTop="18dp"
         android:background="#00ff0000"
         android:contentDescription="close"
-        android:padding="0dp"
         android:scaleType="centerCrop"
         android:src="@drawable/close_icon"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,7 +48,8 @@
             android:id="@+id/Post"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            >
 
 
         </LinearLayout>
@@ -74,11 +74,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:text="inputId"
-        android:textSize="15dp"
+        android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/id"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TextSizeCheck" />
+         />
 
     <TextView
         android:id="@+id/textView3"
@@ -86,13 +86,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginTop="72dp"
+        android:layout_marginEnd="184dp"
         android:text="@string/NAME"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/profile"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/name"
@@ -124,6 +123,14 @@
             android:text="memo"
             android:textSize="15sp" />
     </ScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="197dp"
+        android:background="@color/black"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

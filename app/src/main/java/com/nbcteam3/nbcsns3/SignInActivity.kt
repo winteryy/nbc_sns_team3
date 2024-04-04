@@ -35,7 +35,7 @@ class SignInActivity : AppCompatActivity() {
 
             val sharedPreference = getSharedPreferences("signInUser", MODE_PRIVATE)
             val editor: SharedPreferences.Editor = sharedPreference.edit()
-            editor.putString("userId", userId.text.toString())
+            editor.putString("userId", userId.toString())
             editor.putString("userPw", userPw.toString())
             editor.apply()
 
