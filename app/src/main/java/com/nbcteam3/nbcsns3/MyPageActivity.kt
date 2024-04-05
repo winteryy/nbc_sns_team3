@@ -56,8 +56,6 @@ class MyPageActivity : AppCompatActivity() {
                     innerLayout.addView(view)
                 }
             }
-
         }
-
     }
 }

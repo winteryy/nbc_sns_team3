@@ -6,8 +6,8 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+
 
 class SignInActivity : AppCompatActivity() {
 
@@ -45,7 +45,7 @@ class SignInActivity : AppCompatActivity() {
                 showToast(getString(R.string.log_in_failure))
                 return@setOnClickListener
 
-            } else if (userPw2 == findUser.password ) {
+            } else if (userPw2 == findUser.password) {
 
                 val sharedPreference = getSharedPreferences("signInUser", MODE_PRIVATE)
                 val editor: SharedPreferences.Editor = sharedPreference.edit()
@@ -59,8 +59,5 @@ class SignInActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
         }
-    }
-    private fun showToast(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }

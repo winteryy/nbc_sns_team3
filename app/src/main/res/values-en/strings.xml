@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">NBC SNS Team3</string>
+    <string name="app_name">Between F and T</string>
     <!-- 메인 -->
     <string name="confirm">Confirm</string>
 
@@ -27,7 +27,7 @@
 
 
     <!--  디테일  -->
-    <string name="set_name_button_text">"mainpage"</string>
+
 
 
 

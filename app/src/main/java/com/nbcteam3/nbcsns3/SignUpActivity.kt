@@ -7,7 +7,6 @@ import android.text.TextWatcher
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import java.util.regex.Pattern
@@ -53,10 +52,6 @@ class SignUpActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-    }
-
-    private fun showToast(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
     private fun regularPw():Boolean {

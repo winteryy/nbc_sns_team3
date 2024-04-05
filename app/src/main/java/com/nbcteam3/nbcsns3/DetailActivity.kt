@@ -15,9 +15,6 @@ import de.hdodenhof.circleimageview.CircleImageView
 
 class DetailActivity : AppCompatActivity() {
 
-    //이 이노테이션은 스튜디오에서 발생하는 Lint 경고를 무시하도록 지시하는 역할.
-    //레이아웃 xml 파일에서 뷰에대한 android:id 속성이 없을때 발생하는 경고를 무시하는 명령이다.
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
@@ -41,13 +38,9 @@ class DetailActivity : AppCompatActivity() {
         usermemo.post {
             if (usermemo.layout.lineCount >= 3) {
                 moreMemo.visibility = View.VISIBLE
-
             }
-
         }
 
-
-        //post image id
         storyImage.setImageResource(post.imageId)
         userimage.setImageResource(user.profileImageId)
         username.setText(user.name)
@@ -57,37 +50,20 @@ class DetailActivity : AppCompatActivity() {
         usermemo.setText(user.memo)
 
 
-
         backButton.setOnClickListener {
-
             finish()
             overridePendingTransition(R.anim.slide_left_enter, R.anim.slide_left_exit)
         }
-        //더보기를 클릭했을때 액션
         moreMemo.setOnClickListener {
 
 
-            if (isExpanded) { //true 일때 접어주기
-
-
+            if (isExpanded) {
                 isExpanded = false
                 usermemo.maxLines = 2
-
-            } else  { //else 일때 펴주기
-
+            } else {
                 isExpanded = true
                 usermemo.maxLines = Int.MAX_VALUE
-
             }
-
-
-
-
         }
-
-
-       //메모가 펼쳐져있을때(최대일때) 다시 접게하기
-       //usermemo.maxLines == Int.max
-
     }
 }
