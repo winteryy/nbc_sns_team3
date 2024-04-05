@@ -4,7 +4,6 @@ package com.nbcteam3.nbcsns3
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -31,6 +30,7 @@ class SignInActivity : AppCompatActivity() {
             val userPw2 = userPw.text.toString()
 
             val findUser = loadUsers.find { it.userId == userId2 }
+            val findPw = loadUsers.find {it.password == userPw2}
 
                    if (userId.text.isEmpty()) {
                        showToast(getString(R.string.input_id))
@@ -41,14 +41,15 @@ class SignInActivity : AppCompatActivity() {
                        showToast(getString(R.string.input_pw))
                        return@setOnClickListener
                    }
+            if (findUser?.password == findPw?.password) {
+
+                showToast(getString(R.string.login))
 
                    val sharedPreference = getSharedPreferences("signInUser", MODE_PRIVATE)
                    val editor: SharedPreferences.Editor = sharedPreference.edit()
                    editor.putString("userId", userId.text.toString())
                    editor.putString("userPw", userId.text.toString())
                    editor.apply()
-
-            if (findUser?.userId == findUser?.password) {
 
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
