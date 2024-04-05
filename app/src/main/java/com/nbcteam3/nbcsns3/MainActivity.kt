@@ -43,7 +43,7 @@ class MainActivity: AppCompatActivity() {
 
     private fun cardBinder(post: Post, writer: User): View {
         val itemCard = LayoutInflater.from(this).inflate(
-            R.layout.item_post, null
+            R.layout.item_post, innerLayout, false
         )
         itemCard.findViewById<TextView>(R.id.nameTextView).text = writer.userId
         itemCard.findViewById<CircleImageView>(R.id.profileImageView).setImageResource(writer.profileImageId)
