@@ -3,6 +3,8 @@ package com.nbcteam3.nbcsns3
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -29,9 +31,21 @@ class DetailActivity : AppCompatActivity() {
         val userstory = findViewById<TextView>(R.id.userStory)
         val storytitle = findViewById<TextView>(R.id.title)
         val usermemo = findViewById<TextView>(R.id.memo)
+        val moreMemo = findViewById<TextView>(R.id.showMore)
+        var isExpanded = false
 
         val user = intent.getSerializableExtra(MainActivity.USER_DATA) as User
         val post = intent.getSerializableExtra(MainActivity.POST_DATA) as Post
+
+
+        usermemo.post {
+            if (usermemo.layout.lineCount >= 3) {
+                moreMemo.visibility = View.VISIBLE
+
+            }
+
+        }
+
 
         //post image id
         storyImage.setImageResource(post.imageId)
@@ -49,7 +63,31 @@ class DetailActivity : AppCompatActivity() {
             finish()
             overridePendingTransition(R.anim.slide_left_enter, R.anim.slide_left_exit)
         }
+        //더보기를 클릭했을때 액션
+        moreMemo.setOnClickListener {
 
+
+            if (isExpanded) { //true 일때 접어주기
+
+
+                isExpanded = false
+                usermemo.maxLines = 2
+
+            } else  { //else 일때 펴주기
+
+                isExpanded = true
+                usermemo.maxLines = Int.MAX_VALUE
+
+            }
+
+
+
+
+        }
+
+
+       //메모가 펼쳐져있을때(최대일때) 다시 접게하기
+       //usermemo.maxLines == Int.max
 
     }
 }

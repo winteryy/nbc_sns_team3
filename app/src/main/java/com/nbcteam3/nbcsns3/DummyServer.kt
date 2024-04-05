@@ -27,7 +27,7 @@ object DummyServer {
             userId = "YONGHEEDA",
             password = "yh5555@LEE",
             name = "이영희",
-            memo = "MBTI: CUTE\n반오십 크리에이터\n협찬, 광고문의 DM으로",
+            memo = "MBTI: CUTE\n반오십 크리에이터\n협찬, 광고문의 DM으로, 저녁은 소고기국밥입니다 진짜 짱 맛있겠다 저녁으로 맛있는거 먹는건 국룰이지! 피자도 먹어야지~",
             profileImageId = R.drawable.profile3
         ),
         User(
