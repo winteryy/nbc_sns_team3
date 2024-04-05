@@ -32,7 +32,7 @@ class DetailActivity : AppCompatActivity() {
         val storytitle = findViewById<TextView>(R.id.title)
         val usermemo = findViewById<TextView>(R.id.memo)
         val moreMemo = findViewById<TextView>(R.id.showMore)
-
+        var isExpanded = false
 
         val user = intent.getSerializableExtra(MainActivity.USER_DATA) as User
         val post = intent.getSerializableExtra(MainActivity.POST_DATA) as Post
