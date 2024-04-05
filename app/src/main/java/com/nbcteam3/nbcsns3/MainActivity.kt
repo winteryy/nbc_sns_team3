@@ -20,7 +20,6 @@ class MainActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
         innerLayout = findViewById(R.id.contentLayout)
 
         val posts = DummyServer.loadPosts()
@@ -40,6 +39,7 @@ class MainActivity: AppCompatActivity() {
     private fun setListener() {
         findViewById<Flow>(R.id.myPageFlow).setOnClickListener {
             startActivity(Intent(this, MyPageActivity::class.java))
+            overridePendingTransition(R.anim.slide_left_enter, R.anim.slide_left_exit)
         }
     }
 
@@ -58,6 +58,7 @@ class MainActivity: AppCompatActivity() {
                 putExtra(POST_DATA, post)
             }
             )
+            overridePendingTransition(R.anim.slide_right_enter, R.anim.slide_right_exit)
         }
         return itemCard
     }
