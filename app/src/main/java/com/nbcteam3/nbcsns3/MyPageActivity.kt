@@ -27,6 +27,7 @@ class MyPageActivity : AppCompatActivity() {
 
         btnBack.setOnClickListener {
             finish()
+            overridePendingTransition(R.anim.slide_right_enter, R.anim.slide_right_exit)
         }
 
         innerLayout = findViewById(R.id.Post)
