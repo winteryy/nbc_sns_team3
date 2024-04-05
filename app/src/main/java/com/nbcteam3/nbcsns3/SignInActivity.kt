@@ -41,18 +41,20 @@ class SignInActivity : AppCompatActivity() {
                        showToast(getString(R.string.input_pw))
                        return@setOnClickListener
                    }
+
             if (findUser?.password == findPw?.password) {
 
+                val sharedPreference = getSharedPreferences("signInUser", MODE_PRIVATE)
+                val editor: SharedPreferences.Editor = sharedPreference.edit()
+                editor.putString("userId", userId.text.toString())
+                editor.putString("userPw", userId.text.toString())
+                editor.apply()
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+            }
+            if (findUser?.password != findPw?.password){
                 showToast(getString(R.string.login))
-
-                   val sharedPreference = getSharedPreferences("signInUser", MODE_PRIVATE)
-                   val editor: SharedPreferences.Editor = sharedPreference.edit()
-                   editor.putString("userId", userId.text.toString())
-                   editor.putString("userPw", userId.text.toString())
-                   editor.apply()
-
-                    val intent = Intent(this, MainActivity::class.java)
-                    startActivity(intent)
+                return@setOnClickListener
             }
         }
     }
