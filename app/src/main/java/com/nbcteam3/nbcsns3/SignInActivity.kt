@@ -30,10 +30,7 @@ class SignInActivity : AppCompatActivity() {
             val userId2 = userId.text.toString()
             val userPw2 = userPw.text.toString()
 
-            Log.d("id",userId2)
-            Log.d("pw",userPw2)
             val findUser = loadUsers.find { it.userId == userId2 }
-            val findPw = loadUsers.find { it.password == userPw2 }
 
                    if (userId.text.isEmpty()) {
                        showToast(getString(R.string.input_id))
@@ -51,16 +48,12 @@ class SignInActivity : AppCompatActivity() {
                    editor.putString("userPw", userId.text.toString())
                    editor.apply()
 
-            if (findUser !== null) {
-
-                if (findPw !== null){
+            if (findUser?.userId == findUser?.password) {
 
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
-                }
             }
         }
-
     }
 
     private fun showToast(message: String) {

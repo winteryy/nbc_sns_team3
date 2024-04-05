@@ -40,9 +40,6 @@ class SignUpActivity : AppCompatActivity() {
 
         signUpButton.setOnClickListener {
 
-            DummyServer.registerUser(signUpName.text.toString(),signUpId.text.toString(),signUpPw.text.toString())
-
-
             if (signUpName.text.toString().isEmpty() || signUpId.text.toString().isEmpty() || signUpPw.text.toString().isEmpty()) {
                 showToast(getString(R.string.toastnotenter))
                 return@setOnClickListener
@@ -51,7 +48,7 @@ class SignUpActivity : AppCompatActivity() {
                 showToast(getString(R.string.sign_up_pwmatch))
                 return@setOnClickListener
             }
-
+            DummyServer.registerUser(signUpName.text.toString(),signUpId.text.toString(),signUpPw.text.toString())
             val intent = Intent(this, SignInActivity::class.java)
             startActivity(intent)
             finish()
