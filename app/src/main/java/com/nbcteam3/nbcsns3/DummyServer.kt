@@ -5,7 +5,7 @@ import com.nbcteam3.nbcsns3.entity.User
 
 object DummyServer {
 
-    private val userList = listOf(
+    private var userList = listOf(
         User(
             uid = "go5zn7gbufel",
             userId = "Honggggg",
@@ -109,4 +109,28 @@ object DummyServer {
 
     fun loadPosts() = postList
     fun loadUsers() = userList
+
+    fun registerUser(name: String, id: String, password: String) {
+        val newList = userList.toMutableList()
+        newList.add(
+            User(
+                uid = getNewId(),
+                userId = id,
+                password = password,
+                name = name,
+                memo = "상태메시지 없음",
+                R.drawable.img
+            )
+        )
+        userList = newList.toList()
+    }
+
+    private fun getNewId(): String {
+        val charset = ('0'..'9') + ('a'..'z')
+        var newId = List(12) { charset.random() }.joinToString("")
+        while(userList.find { it.uid == newId } != null) {
+            newId = List(12) { charset.random() }.joinToString("")
+        }
+        return newId
+    }
 }
