@@ -30,8 +30,7 @@
 
 ### 🔎구현 기능 
 + 메인 화면
-
-+ https://github.com/winteryy/nbc_sns_team3/wiki/%EB%A9%94%EC%9D%B8%ED%99%94%EB%A9%B4
+ https://github.com/winteryy/nbc_sns_team3/wiki/%EB%A9%94%EC%9D%B8%ED%99%94%EB%A9%B4
 + 디테일 화면
 + 로그인 , 회원 가입 화면
 + 마이 페이지 화면
