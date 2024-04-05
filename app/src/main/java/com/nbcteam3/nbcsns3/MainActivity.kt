@@ -21,6 +21,7 @@ class MainActivity: AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         innerLayout = findViewById(R.id.contentLayout)
+
         val posts = DummyServer.loadPosts()
         val users = DummyServer.loadUsers()
         val uidMap = users.associateBy { it.uid }
@@ -38,12 +39,13 @@ class MainActivity: AppCompatActivity() {
     private fun setListener() {
         findViewById<Flow>(R.id.myPageFlow).setOnClickListener {
             startActivity(Intent(this, MyPageActivity::class.java))
+            overridePendingTransition(R.anim.slide_left_enter, R.anim.slide_left_exit)
         }
     }
 
     private fun cardBinder(post: Post, writer: User): View {
         val itemCard = LayoutInflater.from(this).inflate(
-            R.layout.item_post, null
+            R.layout.item_post, innerLayout, false
         )
         itemCard.findViewById<TextView>(R.id.nameTextView).text = writer.userId
         itemCard.findViewById<CircleImageView>(R.id.profileImageView).setImageResource(writer.profileImageId)
@@ -56,6 +58,7 @@ class MainActivity: AppCompatActivity() {
                 putExtra(POST_DATA, post)
             }
             )
+            overridePendingTransition(R.anim.slide_right_enter, R.anim.slide_right_exit)
         }
         return itemCard
     }
