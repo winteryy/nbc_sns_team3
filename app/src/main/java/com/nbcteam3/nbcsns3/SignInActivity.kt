@@ -28,21 +28,24 @@ class SignInActivity : AppCompatActivity() {
         signInButton.setOnClickListener {
             val userId2 = userId.text.toString()
             val userPw2 = userPw.text.toString()
-
             val findUser = loadUsers.find { it.userId == userId2 }
-            val findPw = loadUsers.find {it.password == userPw2}
 
-                   if (userId.text.isEmpty()) {
-                       showToast(getString(R.string.input_id))
-                       return@setOnClickListener
-                   }
+            if (findUser == null) {
 
-                   if (userPw.text.isEmpty()) {
-                       showToast(getString(R.string.input_pw))
-                       return@setOnClickListener
-                   }
+                showToast(getString(R.string.login))
+                return@setOnClickListener
 
-            if (findUser?.password == findPw?.password) {
+            } else if (userPw2 == findUser.password ) {
+
+                if (userId.text.isEmpty()) {
+                    showToast(getString(R.string.input_id))
+                    return@setOnClickListener
+                }
+
+                if (userPw.text.isEmpty()) {
+                    showToast(getString(R.string.input_pw))
+                    return@setOnClickListener
+                }
 
                 val sharedPreference = getSharedPreferences("signInUser", MODE_PRIVATE)
                 val editor: SharedPreferences.Editor = sharedPreference.edit()
@@ -52,7 +55,7 @@ class SignInActivity : AppCompatActivity() {
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
             }
-            if (findUser?.password != findPw?.password){
+            else {
                 showToast(getString(R.string.login))
                 return@setOnClickListener
             }
