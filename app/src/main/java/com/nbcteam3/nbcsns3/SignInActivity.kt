@@ -42,7 +42,7 @@ class SignInActivity : AppCompatActivity() {
             val findUser = loadUsers.find { it.userId == userId2 }
             if (findUser == null) {
 
-                showToast(getString(R.string.loginfailure))
+                showToast(getString(R.string.log_in_failure))
                 return@setOnClickListener
 
             } else if (userPw2 == findUser.password ) {
@@ -55,7 +55,7 @@ class SignInActivity : AppCompatActivity() {
                 startActivity(intent)
 
             } else {
-                showToast(getString(R.string.loginfailure))
+                showToast(getString(R.string.log_in_failure))
                 return@setOnClickListener
             }
         }
