@@ -59,7 +59,7 @@
     <string name="toastnotenter">There is incorrect information</string>
     <string name="sign_up">Sign up</string>
     <string name="sign_in">Sign in</string>
-    <string name="login">You entered your login or password incorrectly. Please check the information you entered again.</string>
+    <string name="login failure">You entered your login or password incorrectly. Please check the information you entered again.</string>
     <string name="id">ID:</string>
     <string name="name">NAME:</string>
 

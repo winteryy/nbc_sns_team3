@@ -33,7 +33,6 @@ class MyPageActivity : AppCompatActivity() {
 
         val shared = getSharedPreferences("signInUser", MODE_PRIVATE)
         val userId = shared.getString("userId", "") ?: ""
-        val userPw = shared.getString("userPw", "") ?: ""
 
         if (userId.isNotEmpty()) {
             val findUser = loadUsers.find { it.userId == userId }

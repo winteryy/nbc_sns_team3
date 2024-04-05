@@ -28,40 +28,38 @@ class SignInActivity : AppCompatActivity() {
         signInButton.setOnClickListener {
             val userId2 = userId.text.toString()
             val userPw2 = userPw.text.toString()
-            val findUser = loadUsers.find { it.userId == userId2 }
 
+            if (userId.text.isEmpty()) {
+                showToast(getString(R.string.input_id))
+                return@setOnClickListener
+            }
+
+            if (userPw.text.isEmpty()) {
+                showToast(getString(R.string.input_pw))
+                return@setOnClickListener
+            }
+
+            val findUser = loadUsers.find { it.userId == userId2 }
             if (findUser == null) {
 
-                showToast(getString(R.string.login))
+                showToast(getString(R.string.loginfailure))
                 return@setOnClickListener
 
             } else if (userPw2 == findUser.password ) {
 
-                if (userId.text.isEmpty()) {
-                    showToast(getString(R.string.input_id))
-                    return@setOnClickListener
-                }
-
-                if (userPw.text.isEmpty()) {
-                    showToast(getString(R.string.input_pw))
-                    return@setOnClickListener
-                }
-
                 val sharedPreference = getSharedPreferences("signInUser", MODE_PRIVATE)
                 val editor: SharedPreferences.Editor = sharedPreference.edit()
                 editor.putString("userId", userId.text.toString())
-                editor.putString("userPw", userId.text.toString())
                 editor.apply()
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
-            }
-            else {
-                showToast(getString(R.string.login))
+
+            } else {
+                showToast(getString(R.string.loginfailure))
                 return@setOnClickListener
             }
         }
     }
-
     private fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
