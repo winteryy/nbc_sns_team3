@@ -3,6 +3,8 @@ package com.nbcteam3.nbcsns3
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -36,7 +38,13 @@ class DetailActivity : AppCompatActivity() {
         val post = intent.getSerializableExtra(MainActivity.POST_DATA) as Post
 
 
+        usermemo.post {
+            if (usermemo.layout.lineCount >= 2) {
+                moreMemo.visibility = View.VISIBLE
 
+            }
+
+        }
 
 
         //post image id
@@ -56,6 +64,12 @@ class DetailActivity : AppCompatActivity() {
 
         }
 
+        moreMemo.setOnClickListener {
+
+            usermemo.maxLines = Int.MAX_VALUE
+            moreMemo.visibility = View.GONE
+
+        }
 
     }
 }

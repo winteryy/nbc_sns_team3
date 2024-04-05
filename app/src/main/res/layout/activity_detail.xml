@@ -25,7 +25,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="20dp"
         android:background="@color/white"
@@ -34,7 +34,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/memo">
+        app:layout_constraintTop_toBottomOf="@id/showMore">
 
         <ScrollView
             android:layout_width="match_parent"
@@ -156,7 +156,7 @@
         android:layout_marginEnd="45dp"
         android:ellipsize="end"
         android:maxLines="2"
-    tools:text="메모"
+        tools:text="메모"
         app:layout_constraintEnd_toEndOf="@id/viewTop"
         app:layout_constraintStart_toStartOf="@id/setUserName"
         app:layout_constraintTop_toBottomOf="@id/setUserName" />
@@ -167,9 +167,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="더 보기"
-        android:visibility="gone"
-        app:layout_constraintStart_toEndOf="@id/memo"
-        app:layout_constraintTop_toTopOf="@id/memo" />
-
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@id/memo"
+        app:layout_constraintStart_toStartOf="@id/memo"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="10dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
