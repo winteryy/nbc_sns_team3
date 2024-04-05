@@ -13,7 +13,6 @@ import androidx.core.view.isVisible
 import java.util.regex.Pattern
 
 class SignUpActivity : AppCompatActivity() {
-
     private lateinit var signUpPwText: TextView
     private lateinit var signUpPw: EditText
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,6 +24,7 @@ class SignUpActivity : AppCompatActivity() {
         val signUpId = findViewById<EditText>(R.id.signUpID)
         signUpPw = findViewById(R.id.signUpPw)
         signUpPwText = findViewById(R.id.signUpPwText)
+
 
         signUpPw.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
@@ -48,7 +48,7 @@ class SignUpActivity : AppCompatActivity() {
                 showToast(getString(R.string.sign_up_pwmatch))
                 return@setOnClickListener
             }
-
+            DummyServer.registerUser(signUpName.text.toString(),signUpId.text.toString(),signUpPw.text.toString())
             val intent = Intent(this, SignInActivity::class.java)
             startActivity(intent)
             finish()

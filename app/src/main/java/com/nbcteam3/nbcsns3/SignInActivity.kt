@@ -1,5 +1,6 @@
 package com.nbcteam3.nbcsns3
 
+
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -9,6 +10,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class SignInActivity : AppCompatActivity() {
+
+    private val loadUsers = DummyServer.loadUsers()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
@@ -23,27 +26,40 @@ class SignInActivity : AppCompatActivity() {
             startActivity(intent)
         }
         signInButton.setOnClickListener {
+            val userId2 = userId.text.toString()
+            val userPw2 = userPw.text.toString()
 
             if (userId.text.isEmpty()) {
                 showToast(getString(R.string.input_id))
                 return@setOnClickListener
             }
+
             if (userPw.text.isEmpty()) {
                 showToast(getString(R.string.input_pw))
                 return@setOnClickListener
             }
 
-            val sharedPreference = getSharedPreferences("signInUser", MODE_PRIVATE)
-            val editor: SharedPreferences.Editor = sharedPreference.edit()
-            editor.putString("userId", userId.text.toString())
-            editor.putString("userPw", userPw.text.toString())
-            editor.apply()
+            val findUser = loadUsers.find { it.userId == userId2 }
+            if (findUser == null) {
 
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+                showToast(getString(R.string.log_in_failure))
+                return@setOnClickListener
+
+            } else if (userPw2 == findUser.password ) {
+
+                val sharedPreference = getSharedPreferences("signInUser", MODE_PRIVATE)
+                val editor: SharedPreferences.Editor = sharedPreference.edit()
+                editor.putString("userId", userId.text.toString())
+                editor.apply()
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+
+            } else {
+                showToast(getString(R.string.log_in_failure))
+                return@setOnClickListener
+            }
         }
     }
-
     private fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }

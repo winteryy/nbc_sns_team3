@@ -59,9 +59,10 @@
     <string name="toastnotenter">There is incorrect information</string>
     <string name="sign_up">Sign up</string>
     <string name="sign_in">Sign in</string>
+    <string name="login failure">You entered your login or password incorrectly. Please check the information you entered again.</string>
     <string name="id">ID:</string>
     <string name="name">NAME:</string>
-    <string name="my">MY</string>
+    <string name="log_in_failure">Please check whether your ID (login won) has been entered or check the information entered again.</string>
 
 
     <!--  마이페이지  -->
