@@ -21,6 +21,7 @@ class MainActivity: AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         innerLayout = findViewById(R.id.contentLayout)
+
         val posts = DummyServer.loadPosts()
         val users = DummyServer.loadUsers()
         val uidMap = users.associateBy { it.uid }
@@ -38,6 +39,7 @@ class MainActivity: AppCompatActivity() {
     private fun setListener() {
         findViewById<Flow>(R.id.myPageFlow).setOnClickListener {
             startActivity(Intent(this, MyPageActivity::class.java))
+            overridePendingTransition(R.anim.slide_left_enter, R.anim.slide_left_exit)
         }
     }
 
@@ -56,6 +58,7 @@ class MainActivity: AppCompatActivity() {
                 putExtra(POST_DATA, post)
             }
             )
+            overridePendingTransition(R.anim.slide_right_enter, R.anim.slide_right_exit)
         }
         return itemCard
     }
