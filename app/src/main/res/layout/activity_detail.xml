@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="ExtraText">
+
+
+    <View
+        android:id="@+id/viewTop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/viewon"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/white"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/showMore">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/setStory">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="25dp"
+                    android:layout_marginTop="20dp"
+                    android:textSize="28sp"
+                    app:layout_constraintBottom_toTopOf="@id/setStory"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="타이틀" />
+
+                <ImageView
+                    android:id="@+id/setStory"
+                    android:layout_width="365dp"
+                    android:layout_height="223dp"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/title"
+                    tools:src="@drawable/iust" />
+
+
+                <TextView
+                    android:id="@+id/userStory"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="40dp"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="@id/setStory"
+                    app:layout_constraintStart_toStartOf="@id/setStory"
+                    app:layout_constraintTop_toBottomOf="@id/setStory"
+                    tools:text="뭐가들어올지 몰라도 뭐가 들어오긴 할것임" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/setMainButton"
+        android:layout_width="40dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/btn_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/setUserimage"
+        android:layout_width="83dp"
+        android:layout_height="97dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        app:civ_border_color="@color/purple_100"
+        app:civ_border_width="4dp"
+        app:layout_constraintStart_toStartOf="@id/viewTop"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        tools:src="@drawable/iupp" />
+
+
+    <TextView
+        android:id="@+id/setUserId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toEndOf="@id/setUserimage"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        tools:text="아이디" />
+
+
+    <TextView
+        android:id="@+id/setUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="@id/setUserId"
+        app:layout_constraintTop_toBottomOf="@id/setUserId"
+        tools:text="이름" />
+
+
+    <TextView
+        android:id="@+id/memo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="45dp"
+        android:maxLines="2"
+        app:layout_constraintEnd_toEndOf="@id/viewTop"
+        app:layout_constraintStart_toStartOf="@id/setUserName"
+        app:layout_constraintTop_toBottomOf="@id/setUserName"
+        tools:text="메모" />
+
+
+    <TextView
+        android:id="@+id/showMore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="15dp"
+        android:text="더 보기"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@id/memo"
+        app:layout_constraintTop_toBottomOf="@id/memo" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
