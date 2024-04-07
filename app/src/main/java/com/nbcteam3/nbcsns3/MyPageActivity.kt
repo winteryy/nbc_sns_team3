@@ -27,13 +27,13 @@ class MyPageActivity : AppCompatActivity() {
 
         btnBack.setOnClickListener {
             finish()
+            overridePendingTransition(R.anim.slide_right_enter, R.anim.slide_right_exit)
         }
 
         innerLayout = findViewById(R.id.Post)
 
         val shared = getSharedPreferences("signInUser", MODE_PRIVATE)
         val userId = shared.getString("userId", "") ?: ""
-        val userPw = shared.getString("userPw", "") ?: ""
 
         if (userId.isNotEmpty()) {
             val findUser = loadUsers.find { it.userId == userId }
@@ -56,8 +56,6 @@ class MyPageActivity : AppCompatActivity() {
                     innerLayout.addView(view)
                 }
             }
-
         }
-
     }
 }

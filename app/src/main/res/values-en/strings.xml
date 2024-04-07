@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">NBC SNS Team3</string>
+    <string name="app_name">Between F and T</string>
     <!-- 메인 -->
     <string name="confirm">Confirm</string>
 
@@ -27,7 +27,7 @@
 
 
     <!--  디테일  -->
-    <string name="set_name_button_text">"mainpage"</string>
+
 
 
 
@@ -61,7 +61,7 @@
     <string name="sign_in">Sign in</string>
     <string name="id">ID:</string>
     <string name="name">NAME:</string>
-    <string name="my">MY</string>
+    <string name="log_in_failure">Please check whether your ID (login won) has been entered or check the information entered again.</string>
 
 
     <!--  마이페이지  -->
