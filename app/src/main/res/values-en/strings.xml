@@ -5,50 +5,7 @@
     <string name="confirm">Confirm</string>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <!--  디테일  -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     <!--  로그인/회원가입  -->
@@ -59,35 +16,12 @@
     <string name="toastnotenter">There is incorrect information</string>
     <string name="sign_up">Sign up</string>
     <string name="sign_in">Sign in</string>
-    <string name="id">ID:</string>
-    <string name="name">NAME:</string>
     <string name="log_in_failure">Please check whether your ID (login won) has been entered or check the information entered again.</string>
 
-
     <!--  마이페이지  -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <string name="id">ID:</string>
+    <string name="name">NAME:</string>
+    <string name="more_text">More</string>
 
 
 
